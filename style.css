@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(130, 132, 133);
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display:flex;
+}
+
+.box {
+    flex: 1;
+    padding: 20px
+}
+
+h1, h2,h3, h4, p {
+    text-align: center;
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
+nav {
+    text-align: center;
+    width: 100%;
+}
+nav a {
+    font-size: 20;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #757677;
+}
+
+header {
+    background: #2a2c2e;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+}

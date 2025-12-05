@@ -43,5 +43,28 @@
         </div>
     </div>
     <p class = "intro">I am happy to present my opening repertoire that has pushed me into the top 0.1% of online players, <br> and provide links to videos that I watched to learn these openings.</p>
+
+    <div id="chess-stats" class="stats-box">
+    Loading live Chess.com ratings...
+    </div>
+    <script>
+fetch("https://api.chess.com/pub/player/epicwolves/stats")
+  .then(response => response.json())
+  .then(data => {
+    const rapid = data.chess_rapid?.last?.rating || "N/A";
+    const blitz = data.chess_blitz?.last?.rating || "N/A";
+    const bullet = data.chess_bullet?.last?.rating || "N/A";
+    
+    document.getElementById("chess-stats").innerHTML = `
+      <h2>My Live Chess.com Ratings</h2>
+      <p><strong>Rapid:</strong> ${rapid}</p> <p><strong>Blitz:</strong> ${blitz}</p> <p><strong>Bullet:</strong> ${bullet}</p>
+    `;
+  })
+  .catch(err => {
+    document.getElementById("chess-stats").innerHTML = 
+      "Unable to load live stats.";
+  });
+</script>
+
 </body>
 </html>
